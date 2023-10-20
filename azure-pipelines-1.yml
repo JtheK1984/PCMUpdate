@@ -2,6 +2,17 @@ pool:
   name: DEV
 
 steps:
+- task: CmdLine@1
+  displayName: Init submodules
+  inputs:
+   filename: 'C:\Program Files\Git\cmd\git.exe'
+   arguments: 'submodule init'
+- task: CmdLine@1
+  displayName: Update submodules
+  inputs:
+   filename: 'C:\Program Files\Git\cmd\git.exe'
+   arguments: 'submodule update'
+   
 - task: BatchScript@1
   displayName: 'Delphivariablen für Build vorbereiten'
   inputs:
