@@ -21,6 +21,8 @@ type
   private
     { Private-Deklarationen }
   public
+    iModulTab: integer;
+    slocale: String;
     bNewLiceneCheck: boolean;
     bCLose: Boolean;
     bLogin: Boolean;

@@ -1,4 +1,4 @@
-object frm_Main: Tfrm_Main
+object frm_PCM_Main: Tfrm_PCM_Main
   Left = 549
   Top = 0
   BorderIcons = [biSystemMenu]
@@ -22,8 +22,6 @@ object frm_Main: Tfrm_Main
     Align = alClient
     Style.BorderStyle = ebsNone
     TabOrder = 0
-    ExplicitWidth = 797
-    ExplicitHeight = 89
     Height = 90
     Width = 801
     object Image1: TImage
@@ -501,7 +499,6 @@ object frm_Main: Tfrm_Main
   end
   object lafCtrl_Main: TcxLookAndFeelController
     Kind = lfFlat
-    NativeStyle = False
     ScrollbarMode = sbmClassic
     SkinName = 'DevExpressDarkStyle'
     RenderMode = rmGDIPlus

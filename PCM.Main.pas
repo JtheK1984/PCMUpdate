@@ -32,7 +32,7 @@ uses
   dxSkinWXI;
 
 type
-  Tfrm_Main = class(TForm)
+  Tfrm_PCM_Main = class(TForm)
     Image1: TImage;
     bExecute: TcxButton;
     bClose: TcxButton;
@@ -77,7 +77,7 @@ type
   end;
 
 var
-  frm_Main: Tfrm_Main;
+  frm_PCM_Main: Tfrm_PCM_Main;
 
   //  strlstLog: TStringList;
 
@@ -86,16 +86,16 @@ implementation
 {$R *.dfm}
 
 uses PCM.Update.XMLParse, PCM.Update.Datamodul,PCM.Data;
-procedure Tfrm_Main.Log(s: string;iError: integer);
+procedure Tfrm_PCM_Main.Log(s: string;iError: integer);
 begin
   mLog.Lines.Add(s);
   WriteLog(PCM_Logname,s,iError);
 end;
-procedure Tfrm_Main.bCloseClick(Sender: TObject);
+procedure Tfrm_PCM_Main.bCloseClick(Sender: TObject);
 begin
   Close;
 end;
-procedure Tfrm_Main.CreateInsertTable(AQuery: TFDQuery);
+procedure Tfrm_PCM_Main.CreateInsertTable(AQuery: TFDQuery);
 var
   irc: integer;
 begin
@@ -115,7 +115,7 @@ begin
     AQuery.ExecSQL;
   end;
 end;
-procedure Tfrm_Main.bExecuteClick(Sender: TObject);
+procedure Tfrm_PCM_Main.bExecuteClick(Sender: TObject);
 //var
 //  i: Integer;
 begin
@@ -159,11 +159,11 @@ begin
   Application.ProcessMessages;
   bClose.Enabled := True;
 end;
-procedure Tfrm_Main.FormDestroy(Sender: TObject);
+procedure Tfrm_PCM_Main.FormDestroy(Sender: TObject);
 begin
-  WriteLog(PCM_Logname,'Programm beendet',0);
+  WriteLog(PCM_Logname,rs_PCM_Beenden,0);
 end;
-procedure Tfrm_Main.FormShow(Sender: TObject);
+procedure Tfrm_PCM_Main.FormShow(Sender: TObject);
 var
   iniFile: TIniFile;
   sDesign: String;
@@ -175,14 +175,14 @@ begin
   lafCtrl_Main.SkinName:= sDesign;
   iniFile.Free;
 
-  WriteLog(PCM_Logname,'Programm gestartet',0);
+  WriteLog(PCM_Logname,rs_PCM_Start,0);
   if (ParamStr(1) = '/s') then
   begin
     bExecute.Click;
     Application.Terminate;
   end;
 end;
-procedure Tfrm_Main.ProcessDataBase(Alias: string);
+procedure Tfrm_PCM_Main.ProcessDataBase(Alias: string);
 var
   db: TZMIUpdateDatabase;
   i, j: Integer;
