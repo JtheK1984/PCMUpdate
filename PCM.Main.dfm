@@ -409,12 +409,13 @@ object frm_PCM_Main: Tfrm_PCM_Main
         Style.Font.Style = []
         Style.IsFontAssigned = True
         TabOrder = 0
-        Height = 183
+        ExplicitHeight = 183
+        Height = 181
         Width = 779
       end
       object pbMain: TcxProgressBar
         Left = 3
-        Top = 284
+        Top = 282
         Align = alBottom
         ParentFont = False
         Position = 100.000000000000000000
@@ -434,6 +435,7 @@ object frm_PCM_Main: Tfrm_PCM_Main
         StyleHot.LookAndFeel.Kind = lfStandard
         TabOrder = 1
         Visible = False
+        ExplicitTop = 284
         Width = 779
       end
       object Label3: TcxLabel

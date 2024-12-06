@@ -74,7 +74,7 @@ begin
   sStyle:= iniFile.ReadString('PCMManager','Style','Windows10');
   sDesign:= iniFile.ReadString('PCMManager','Design','Basic');
   iDBType:= iniFile.ReadInteger('Database','Type',0);
-  frm_main.lafCtrl_Main.SkinName:= sDesign;
+  frm_PCM_Main.lafCtrl_Main.SkinName:= sDesign;
   iniFile.Free;
 
   try

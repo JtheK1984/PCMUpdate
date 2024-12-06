@@ -7,11 +7,12 @@ uses
   Vcl.Forms,
   Vcl.Themes,
   Vcl.Styles,
+  Windows,
   PCM.Main in 'PCM.Main.pas' {frm_PCM_Main},
   PCM.Data in 'PCM.Data.pas' {dm_PCM: TDataModule},
   PCm.Update.XMLParse in 'Helper\PCm.Update.XMLParse.pas',
   PCM.Update.Libxml2 in 'Helper\PCM.Update.Libxml2.pas';
-  
+
 
 {$R *.res}
 
@@ -38,6 +39,6 @@ begin
   {$ENDIF}
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(Tdm_PCM,dm_PCM);
-  Application.CreateForm(Tfrm_Main,frm_Main);
+  Application.CreateForm(Tfrm_pcm_Main,frm_pcm_Main);
   Application.Run;
 end.

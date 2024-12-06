@@ -85,7 +85,7 @@ implementation
 
 {$R *.dfm}
 
-uses PCM.Update.XMLParse, PCM.Update.Datamodul,PCM.Data;
+uses PCM.Update.XMLParse, PCM.Update.Datamodul,PCM.Data, PCM.Strings;
 procedure Tfrm_PCM_Main.Log(s: string;iError: integer);
 begin
   mLog.Lines.Add(s);
