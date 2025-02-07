@@ -9,12 +9,19 @@ uses
   Vcl.Styles,
   Windows,
   PCM.Main in 'PCM.Main.pas' {frm_PCM_Main},
-  PCM.Data in 'PCM.Data.pas' {dm_PCM: TDataModule},
+  PCM.DAta in 'PCM.DAta.pas' {dm_PCM: TDataModule},
   PCm.Update.XMLParse in 'Helper\PCm.Update.XMLParse.pas',
-  PCM.Update.Libxml2 in 'Helper\PCM.Update.Libxml2.pas';
-
+  PCM.Update.Libxml2 in 'Helper\PCM.Update.Libxml2.pas',
+  PCM.splash in 'PCM.splash.pas' {SplashScreen},
+  PCM.Update in 'Module\PCM.Update.pas' {frm_Update};
 
 {$R *.res}
+
+{$IFDEF WIN64}
+  {$R 'Versioninfo64.res'}
+{$else}
+  {$R 'Versioninfo32.res'}
+{$ENDIF}
 
 {$SetPEOptFlags IMAGE_DLLCHARACTERISTICS_TERMINAL_SERVER_AWARE}
 {$SetPEFlags IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP or IMAGE_FILE_NET_RUN_FROM_SWAP or IMAGE_FILE_LARGE_ADDRESS_AWARE}

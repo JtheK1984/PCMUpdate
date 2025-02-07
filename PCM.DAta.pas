@@ -17,6 +17,9 @@ type
   Tdm_PCM = class(TDataModule)
     con_PCM: TFDConnection;
     qry_Work: TFDQuery;
+    imglst_24x24: TcxImageList;
+    imglst_32x32: TcxImageList;
+    imglst_16x16: TcxImageList;
     procedure con_PCMBeforeConnect(Sender: TObject);
   private
     { Private-Deklarationen }
@@ -36,6 +39,8 @@ type
     bDemo: boolean;
     bAppTerm: boolean;
     dtGueltig,dtCurrDate: Tdate;
+    iBenutzer: integer;
+    sUSerAutologin: string;
     function ReadServerAdress: boolean;
   end;
 
@@ -53,8 +58,9 @@ const
   {$else}
   PCM_Programmname = 'PCM - Update 32-Bit';
   {$ENDIF}
+  PCM_Alias = 'update';
   PCM_Logname =  'PCMUpdate';
-  PCM_Connectionname = 'MP3';
+  PCM_Connectionname = 'Update';
   PCM_Programmnummer = 5;
 
 implementation
