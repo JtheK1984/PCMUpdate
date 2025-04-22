@@ -19,7 +19,9 @@ uses
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, inifiles, cxLabel,
-  cxGroupBox, System.ImageList, Vcl.ImgList, cxImageList,PCM.Functions;
+  cxGroupBox, System.ImageList, Vcl.ImgList, cxImageList,PCM.Functions,
+  dxUIAClasses, dxLayoutControlAdapters, dxLayoutContainer, dxLayoutControl,
+  dxLayoutcxEditAdapters;
 
 
 type
@@ -28,19 +30,26 @@ type
     bExecute: TcxButton;
     pbMain: TcxProgressBar;
     mLog: TcxMemo;
-    cxGroupBox1: TcxGroupBox;
-    Label1: TcxLabel;
-    Label2: TcxLabel;
     lafCtrl_Main: TcxLookAndFeelController;
-    panel1: TcxGroupBox;
-    Label3: TcxLabel;
-    cxGroupBox2: TcxGroupBox;
-    cxLabel1: TcxLabel;
-    cxLabel2: TcxLabel;
-    cxLabel3: TcxLabel;
     TrayIcon1: TTrayIcon;
     cxImageList1: TcxImageList;
-    cxGroupBox3: TcxGroupBox;
+    dxLayoutControl1Group_Root: TdxLayoutGroup;
+    dxLayoutControl1: TdxLayoutControl;
+    dxLayoutGroup1: TdxLayoutGroup;
+    dxLayoutGroup2: TdxLayoutGroup;
+    dxLayoutItem3: TdxLayoutItem;
+    dxLayoutLabeledItem1: TdxLayoutLabeledItem;
+    dxLayoutLabeledItem2: TdxLayoutLabeledItem;
+    dxLayoutItem1: TdxLayoutItem;
+    dxLayoutGroup3: TdxLayoutGroup;
+    dxLayoutLabeledItem3: TdxLayoutLabeledItem;
+    dxLayoutLabeledItem4: TdxLayoutLabeledItem;
+    dxLayoutLabeledItem5: TdxLayoutLabeledItem;
+    dxLayoutEmptySpaceItem1: TdxLayoutEmptySpaceItem;
+    dxLayoutItem2: TdxLayoutItem;
+    panel1: TdxLayoutGroup;
+    dxLayoutItem4: TdxLayoutItem;
+    dxLayoutEmptySpaceItem2: TdxLayoutEmptySpaceItem;
     procedure bExecuteClick(Sender: TObject);
   private
     ASSQL_GET_Version: string;
@@ -109,16 +118,16 @@ begin
   Log('MYSQL-Version prüfen...',0);
   Panel1.Visible := True;
   Application.ProcessMessages;
-  cxLabel1.Style.Font.Style:= [fsbold];
-  cxLabel2.Style.Font.Style:= [];
-  cxLabel3.Style.Font.Style:= [];
+  dxLayoutLabeledItem3.CaptionOptions.text:= '[B]Prüfe Versionstabellen PCM[/B]';
+  dxLayoutLabeledItem4.CaptionOptions.text:= 'Prüfe Version PCM Database';
+  dxLayoutLabeledItem5.CaptionOptions.text:= 'Datenbankupdate durchführen';
   Application.ProcessMessages;
   Sleep(500);
   CreateInsertTable(dm_PCM.qry_work);
   Application.ProcessMessages;
-  cxLabel1.Style.Font.Style:= [];
-  cxLabel2.Style.Font.Style:= [fsbold];
-  cxLabel3.Style.Font.Style:= [];
+  dxLayoutLabeledItem3.CaptionOptions.text:= 'Prüfe Versionstabellen PCM';
+  dxLayoutLabeledItem4.CaptionOptions.text:= '[B]Prüfe Version PCM Database[/B]';
+  dxLayoutLabeledItem5.CaptionOptions.text:= 'Datenbankupdate durchführen';
   Application.ProcessMessages;
   Application.ProcessMessages;
   Log('Datenbankversionen abfragen...',0);
@@ -129,16 +138,16 @@ begin
   iMajor_PCManager:=dm_PCM.qry_work.FieldByName('Major').AsInteger;
   iMinor_PCManager:=dm_PCM.qry_work.FieldByName('Minor').AsInteger;
   dm_PCM.qry_work.Close;
-  cxLabel1.Style.Font.Style:= [];
-  cxLabel2.Style.Font.Style:= [];
-  cxLabel3.Style.Font.Style:= [fsbold];
+  dxLayoutLabeledItem3.CaptionOptions.text:= 'Prüfe Versionstabellen PCM';
+  dxLayoutLabeledItem4.CaptionOptions.text:= 'Prüfe Version PCM Database';
+  dxLayoutLabeledItem5.CaptionOptions.text:= '[B]Datenbankupdate durchführen[/B]';
   Application.ProcessMessages;
   Log('Datenbankupdate ausführen...',0);
   Sleep(500);
   ProcessDatabase('PCM_MANAGER');
-  cxLabel1.Style.Font.Style:= [];
-  cxLabel2.Style.Font.Style:= [];
-  cxLabel3.Style.Font.Style:= [];
+  dxLayoutLabeledItem3.CaptionOptions.text:= 'Prüfe Versionstabellen PCM';
+  dxLayoutLabeledItem4.CaptionOptions.text:= 'Prüfe Version PCM Database';
+  dxLayoutLabeledItem5.CaptionOptions.text:= 'Datenbankupdate durchführen';
   Application.ProcessMessages;
 end;
 procedure Tfrm_Update.ProcessDataBase(Alias: string);

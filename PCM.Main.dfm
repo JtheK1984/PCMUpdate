@@ -34,6 +34,8 @@ object frm_PCM_Main: Tfrm_PCM_Main
     View = 14
     OptionsImage.SmallImages = dm_PCM.imglst_16x16
     OptionsStyle.CustomStyles.Background = navbrStyleIt_main
+    ExplicitTop = 30
+    ExplicitHeight = 714
     object navbrgrp_Optionen: TdxNavBarGroup
       Caption = 'Optionen'
       SelectedLinkIndex = -1
@@ -160,13 +162,16 @@ object frm_PCM_Main: Tfrm_PCM_Main
     PanelStyle.Active = True
     Style.BorderStyle = ebsNone
     TabOrder = 1
+    ExplicitTop = 30
+    ExplicitWidth = 1058
+    ExplicitHeight = 714
     Height = 726
     Width = 1064
     object pc_main: TcxPageControl
-      Left = 3
-      Top = 3
-      Width = 1058
-      Height = 720
+      Left = 2
+      Top = 2
+      Width = 1060
+      Height = 722
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
@@ -180,10 +185,12 @@ object frm_PCM_Main: Tfrm_PCM_Main
       Properties.Images = dm_PCM.imglst_16x16
       Properties.Options = [pcoAlwaysShowGoDialogButton, pcoGradient, pcoGradientClientArea, pcoRedrawOnResize, pcoSort]
       OnPageChanging = pc_mainPageChanging
-      ClientRectBottom = 714
-      ClientRectLeft = 2
-      ClientRectRight = 1052
-      ClientRectTop = 2
+      ExplicitLeft = 3
+      ExplicitTop = 0
+      ClientRectBottom = 718
+      ClientRectLeft = 4
+      ClientRectRight = 1056
+      ClientRectTop = 4
     end
   end
   object img_Icons: TImageList
@@ -468,6 +475,7 @@ object frm_PCM_Main: Tfrm_PCM_Main
   end
   object lafCtrl_Main: TcxLookAndFeelController
     Kind = lfFlat
+    NativeStyle = True
     ScrollbarMode = sbmClassic
     ScrollMode = scmClassic
     SkinName = 'DevExpressDarkStyle'

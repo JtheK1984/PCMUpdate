@@ -1,6 +1,7 @@
 object dm_PCM: Tdm_PCM
-  Height = 480
-  Width = 640
+  Height = 720
+  Width = 960
+  PixelsPerInch = 144
   object con_PCM: TFDConnection
     Params.Strings = (
       'Database=pcm'
@@ -9,22 +10,24 @@ object dm_PCM: Tdm_PCM
       'Server=127.0.0.1'
       'Port=3307'
       'DriverID=MySQL')
+    ResourceOptions.AssignedValues = [rvAutoReconnect]
+    ResourceOptions.AutoReconnect = True
     LoginPrompt = False
     BeforeConnect = con_PCMBeforeConnect
-    Left = 408
-    Top = 40
+    Left = 612
+    Top = 60
   end
   object qry_Work: TFDQuery
     Connection = con_PCM
-    Left = 304
-    Top = 224
+    Left = 456
+    Top = 336
   end
   object imglst_24x24: TcxImageList
     SourceDPI = 96
     Height = 24
     Width = 24
     FormatVersion = 1
-    DesignInfo = 14156063
+    DesignInfo = 21234095
     ImageInfo = <
       item
         ImageClass = 'TBitmap'
@@ -1124,7 +1127,7 @@ object dm_PCM: Tdm_PCM
     Height = 32
     Width = 32
     FormatVersion = 1
-    DesignInfo = 19398863
+    DesignInfo = 29098295
     ImageInfo = <
       item
         ImageClass = 'TBitmap'
@@ -19251,7 +19254,7 @@ object dm_PCM: Tdm_PCM
   object imglst_16x16: TcxImageList
     SourceDPI = 96
     FormatVersion = 1
-    DesignInfo = 7340128
+    DesignInfo = 11010192
     ImageInfo = <
       item
         ImageClass = 'TBitmap'
@@ -22464,5 +22467,16 @@ object dm_PCM: Tdm_PCM
           0B0AE6537AFD5E52AB03CFB05A8321BE1617EF5D2B28C8FE04E650CB170524E8
           0D0000000049454E44AE426082}
       end>
+  end
+  object dxLayoutLookAndFeelList1: TdxLayoutLookAndFeelList
+    object dxLayoutSkinLookAndFeel1: TdxLayoutSkinLookAndFeel
+      Offsets.ControlOffsetHorz = 5
+      Offsets.ControlOffsetVert = 5
+      Offsets.ItemOffset = 6
+      Offsets.RootItemsAreaOffsetHorz = 11
+      Offsets.RootItemsAreaOffsetVert = 11
+      LookAndFeel.NativeStyle = False
+      PixelsPerInch = 144
+    end
   end
 end

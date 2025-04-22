@@ -13,7 +13,8 @@ uses
   PCm.Update.XMLParse in 'Helper\PCm.Update.XMLParse.pas',
   PCM.Update.Libxml2 in 'Helper\PCM.Update.Libxml2.pas',
   PCM.splash in 'PCM.splash.pas' {SplashScreen},
-  PCM.Update in 'Module\PCM.Update.pas' {frm_Update};
+  PCM.Update in 'Module\PCM.Update.pas' {frm_Update},
+  PCMUpdate.dxSettings in 'PCMUpdate.dxSettings.pas';
 
 {$R *.res}
 

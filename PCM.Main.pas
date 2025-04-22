@@ -27,7 +27,8 @@ uses
   cxSplitter, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   cxEdit, cxClasses, System.ImageList, cxContainer, dxBarBuiltInMenu,
   Vcl.ExtCtrls, cxPC, dxNavBarCollns, dxNavBarBase, dxNavBar,
-  dxBar, cxLocalization, cxLabel, cxGroupBox, dxNavBarStyles,inifiles;
+  dxBar, cxLocalization, cxLabel, cxGroupBox, dxNavBarStyles,inifiles,
+  dxUIAClasses;
   {$EndRegion Uses}
 type
   {$Region Type}
