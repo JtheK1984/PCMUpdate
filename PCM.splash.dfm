@@ -2406,42 +2406,42 @@ object SplashScreen: TSplashScreen
   end
   object Timer1: TTimer
     Enabled = False
-    Interval = 750
+    Interval = 250
     OnTimer = Timer1Timer
     Left = 152
     Top = 144
   end
   object Timer2: TTimer
     Enabled = False
-    Interval = 750
+    Interval = 250
     OnTimer = Timer2Timer
     Left = 152
     Top = 208
   end
   object Timer3: TTimer
     Enabled = False
-    Interval = 750
+    Interval = 250
     OnTimer = Timer3Timer
     Left = 152
     Top = 264
   end
   object Timer4: TTimer
     Enabled = False
-    Interval = 750
+    Interval = 250
     OnTimer = Timer4Timer
     Left = 152
     Top = 320
   end
   object Timer5: TTimer
     Enabled = False
-    Interval = 750
+    Interval = 250
     OnTimer = Timer5Timer
     Left = 152
     Top = 376
   end
   object Timer6: TTimer
     Enabled = False
-    Interval = 750
+    Interval = 250
     OnTimer = Timer6Timer
     Left = 152
     Top = 432
