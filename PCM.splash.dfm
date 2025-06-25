@@ -26,15 +26,11 @@ object SplashScreen: TSplashScreen
     Color = 9798503
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 408
-    ExplicitTop = 224
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object img_Splash: TImage
       Left = 0
       Top = 0
       Width = 1000
-      Height = 465
+      Height = 467
       Align = alClient
       Picture.Data = {
         0D546478536D617274496D61676589504E470D0A1A0A0000000D494844520000
@@ -2372,7 +2368,7 @@ object SplashScreen: TSplashScreen
     end
     object prgbr_Splash: TcxProgressBar
       Left = 0
-      Top = 465
+      Top = 467
       Align = alBottom
       ParentFont = False
       Position = 1.000000000000000000
@@ -2400,7 +2396,6 @@ object SplashScreen: TSplashScreen
       StyleHot.LookAndFeel.NativeStyle = False
       TabOrder = 3
       Transparent = True
-      ExplicitTop = 467
       Width = 1000
     end
   end

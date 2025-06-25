@@ -4,13 +4,6 @@ interface
 
 uses
   {$Region Uses}
-  {$IFDEF WIN64}
-    {$I Skins.inc}
-    dxSkinsForm, dxSkinsdxBarPainter, dxSkinscxPCPainter,
-  {$ELSE}
-    {$I Skins.inc}
-    dxSkinsForm, dxSkinsdxBarPainter, dxSkinscxPCPainter,
-  {$ENDIF}
   SYSTEM.uitypes, Winapi.Windows, Winapi.Messages, System.SysUtils,
   System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   Vcl.ImgList, Vcl.Menus, NTTranslator, Strutils, DateUtils,shellapi, Vcl.Themes,
@@ -255,12 +248,12 @@ procedure Tfrm_PCM_Main.RegisterNavBarItems;
   end;
 begin
   Modules.Clear;
-  RegisterForm('iBenutzerverwaltung', Tfrm_User, @frm_User, 1);
-  RegisterForm('iDesign', Tfrm_Design, @frm_Design, 1);
+  RegisterForm('iBenutzerverwaltung', Tfrm_PCM_User, @frm_PCM_User, 1);
+  RegisterForm('iDesign', Tfrm_PCM_Design, @frm_PCM_Design, 1);
   RegisterForm('iUpdate', Tfrm_Update, @frm_Update,1);
   RegisterForm('iSysteminfo',Tfrm_PCM_System, @frm_PCM_System, 1);
   RegisterForm('iInfo',Tfrm_PCM_InfoApp, @frm_PCM_InfoApp, 1);
-  RegisterForm('iHandbuch',Tfrm_Handbuch,@frm_Handbuch, 1);
+  RegisterForm('iHandbuch',Tfrm_PCM_Handbuch,@frm_PCM_Handbuch, 1);
   RegisterEvent('iAbmelden', Abmelden);
   RegisterEvent('iBeenden', Close);
 end;
@@ -324,10 +317,10 @@ procedure Tfrm_PCM_Main.iSpracheClick(Sender: TObject);
 var
   iniFile: TIniFile;
 begin
-  Application.CreateForm(Tfrm_Language,frm_Language);
-  frm_Language.Position:= poScreenCenter;
-  frm_Language.ClientHeight:= 214;
-  frm_Language.ShowModal;
+  Application.CreateForm(Tfrm_PCM_Language,frm_PCM_Language);
+  frm_PCM_Language.Position:= poScreenCenter;
+  frm_PCM_Language.ClientHeight:= 214;
+  frm_PCM_Language.ShowModal;
   TNtTranslator.SetNew(dm_PCM.slocale,[],'de');
   TNtTranslator.TranslateForms;
   iniFile := TIniFile.Create(GetEnvironmentVariable('LOCALAPPDATA') + '\PCM\PCM.ini');

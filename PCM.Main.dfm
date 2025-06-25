@@ -163,8 +163,6 @@ object frm_PCM_Main: Tfrm_PCM_Main
     Style.BorderStyle = ebsNone
     TabOrder = 1
     ExplicitTop = 30
-    ExplicitWidth = 1058
-    ExplicitHeight = 714
     Height = 726
     Width = 1064
     object pc_main: TcxPageControl

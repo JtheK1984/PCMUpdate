@@ -171,7 +171,7 @@ begin
   frm_pcm_Main.Caption:= PCM_Programmname;
   frm_pcm_Main.trayIC_Main.PopupMenu:= frm_pcm_Main.ppm_main;
   if dm_PCM.bDemo then
-    frm_pcm_main.Caption:=PCM_Programmname + rs_PCM_Demolizenz + DateTostr(dm_PCM.dtGueltig);
+    frm_pcm_main.Caption:=PCM_Programmname + rs_Function_Lizenz_LizenzGueltig + DateTostr(dm_PCM.dtGueltig);
   Application.ProcessMessages;
   prgbr_Splash.Properties.Text:= 'Menüs registrieren...';
   Timer6.Enabled:= true;

@@ -3,13 +3,6 @@ unit PCM.Update;
 interface
 
 uses
-  {$IFDEF WIN64}
-    {$I Skins.inc}
-    dxSkinsForm, dxSkinsdxBarPainter, dxSkinscxPCPainter,
-  {$ELSE}
-    {$I Skins.inc}
-    dxSkinsForm, dxSkinsdxBarPainter, dxSkinscxPCPainter,
-  {$ENDIF}
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxLookAndFeels,
   cxLookAndFeelPainters, Vcl.Menus, cxControls, cxContainer, cxEdit,
