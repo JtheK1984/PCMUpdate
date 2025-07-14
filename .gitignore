@@ -67,3 +67,11 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+/Versioninfo32.RES
+/Win32/Debug/pcmupdate.dtd
+/Win32/Debug/pcmupdate.xml
+/Win32/Debug/pcmupdate.xsl
+/Win32/Release/pcmupdate - Kopie.xml
+/Win32/Release/pcmupdate.dtd
+/Win32/Release/pcmupdate.xml
+/Win32/Release/pcmupdate.xsl
