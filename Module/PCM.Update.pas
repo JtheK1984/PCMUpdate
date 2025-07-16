@@ -144,6 +144,54 @@ begin
   Application.ProcessMessages;
 end;
 procedure Tfrm_Update.ProcessDataBase(Alias: string);
+
+  function FunctionExists(AFunction: String): boolean;
+  var
+    qry_Function: TFDQuery;
+  begin
+    qry_Function := TFDQuery.Create(nil);
+    try
+      qry_Function.Connection := dm_PCM.con_PCM;
+      qry_Function.SQL.Text := 'SELECT COUNT(*) FROM information_schema.ROUTINES ' +
+                       'WHERE ROUTINE_TYPE = ''FUNCTION'' AND ROUTINE_SCHEMA = DATABASE() ' +
+                       'AND ROUTINE_NAME = :Function';
+      qry_Function.ParamByName('Function').asString:= AFunction;
+      qry_Function.Open;
+      Result := qry_Function.Fields[0].AsInteger > 0;
+    finally
+      qry_Function.Free;
+    end;
+  end;
+  procedure CreateFunctions;
+  const
+    SQL_FUNCTION_MintoHour =  'CREATE FUNCTION `MinToHour`(`minutes` INT)' + sLineBreak +
+                              'RETURNS varchar(6) CHARSET utf8mb4' + sLineBreak +
+                              'DETERMINISTIC' + sLineBreak +
+                              'BEGIN' + sLineBreak +
+                              '  DECLARE hours INT;' + sLineBreak +
+                              '  DECLARE remaining_minutes INT;' + sLineBreak +
+                              '  DECLARE formatted_time VARCHAR(6);' + sLineBreak +
+                              '  SET hours = FLOOR(ABS(minutes) / 60);' + sLineBreak +
+                              '  SET remaining_minutes = ABS(minutes) MOD 60;' + sLineBreak +
+                              '  SET formatted_time = CONCAT(LPAD(hours, 2, ''0''), '':'', LPAD(remaining_minutes, 2, ''0''));' + sLineBreak +
+                              '  IF minutes < 0 THEN' + sLineBreak +
+                              '    SET formatted_time = CONCAT(''-'', formatted_time);' + sLineBreak +
+                              '  END IF;' + sLineBreak +
+                              '  RETURN formatted_time;' + sLineBreak +
+                              'END;';
+  var
+    Cmd: TFDCommand;
+  begin
+    Cmd := TFDCommand.Create(nil);
+    if not FunctionExists('MinToHour') then
+    begin
+      Cmd.Connection := dm_PCM.con_PCM;
+      Cmd.CommandText.Text := SQL_FUNCTION_MintoHour;
+      Cmd.Execute;
+    end;
+    Cmd.Free;
+
+  end;
 var
   db: TZMIUpdateDatabase;
   i, j: Integer;
@@ -172,6 +220,11 @@ begin
       for i := 0 to db.Versions.Count - 1 do
       begin
         Ver := TZMIUpdateVersion(db.Versions[i]);
+        if Ver.Major * 1000 + Ver.Minor = 1001 then
+        begin
+          CreateFunctions;
+        end;
+
         if (Ver.Major * 1000 + Ver.Minor > iMajor * 1000 + iMinor) then
         begin
           // neue Version aktualisieren
