@@ -163,6 +163,8 @@ object frm_PCM_Main: Tfrm_PCM_Main
     Style.BorderStyle = ebsNone
     TabOrder = 1
     ExplicitTop = 30
+    ExplicitWidth = 1058
+    ExplicitHeight = 714
     Height = 726
     Width = 1064
     object pc_main: TcxPageControl
@@ -183,8 +185,8 @@ object frm_PCM_Main: Tfrm_PCM_Main
       Properties.Images = dm_PCM.imglst_16x16
       Properties.Options = [pcoAlwaysShowGoDialogButton, pcoGradient, pcoGradientClientArea, pcoRedrawOnResize, pcoSort]
       OnPageChanging = pc_mainPageChanging
-      ExplicitLeft = 3
-      ExplicitTop = 0
+      ExplicitWidth = 1054
+      ExplicitHeight = 710
       ClientRectBottom = 718
       ClientRectLeft = 4
       ClientRectRight = 1056

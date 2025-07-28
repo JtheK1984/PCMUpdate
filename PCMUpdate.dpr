@@ -4,9 +4,11 @@ uses
   inifiles,
   NtTranslator,
   System.SysUtils,
+  uWVLoader,			
   Vcl.Forms,
   Vcl.Themes,
   Vcl.Styles,
+  PCM.Helper,
   Windows,
   PCM.Main in 'PCM.Main.pas' {frm_PCM_Main},
   PCM.DAta in 'PCM.DAta.pas' {dm_PCM: TDataModule},
@@ -29,22 +31,23 @@ uses
 
 var
   ifini: TIniFile;
-  sStyle: String;
   slocale: String;
 
 begin
+  Checkinis;
   ifini:=TIniFile.create(GetEnvironmentVariable('LOCALAPPDATA') + '\PCM\PCM.ini');
-  sStyle:=ifini.ReadString('PCMUpdate','Style','Windows');
-  slocale:=ifini.ReadString('PCMBackup','Language','de');
+  slocale:=ifini.ReadString('PCMUpdate','Language','de');
   ifini.Free;
+  GlobalWebView2Loader                := TWVLoader.Create(nil);
+  GlobalWebView2Loader.UserDataFolder := GetEnvironmentVariable('LOCALAPPDATA') + '\PCM\CustomCache';
+  GlobalWebView2Loader.StartWebView2;
   Application.Initialize;
-  TStyleManager.TrySetStyle(sStyle);
   {$IFDEF WIN64}
   Application.Title:= 'PCM - Update 64-Bit';
-  TNtTranslator.SetNew(slocale,[],'de');
   {$else}
   Application.Title:= 'PCM - Update 32-Bit';
   {$ENDIF}
+  TNtTranslator.SetNew(slocale,[],'de');
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(Tdm_PCM,dm_PCM);
   Application.CreateForm(Tfrm_pcm_Main,frm_pcm_Main);

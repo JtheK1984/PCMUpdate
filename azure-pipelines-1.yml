@@ -37,7 +37,7 @@ steps:
   inputs:
     solution: PCMUpdate.dproj
     platform: Win32
-    msbuildArguments: '/t:Clean;Build;CompressWin32 /p:config=Release /p:platform=Win32'
+    msbuildArguments: '/t:Clean;Build;Localize;CompressWin32 /p:config=Release /p:platform=Win32'
 
 - task: BatchScript@1
   displayName: erzeugte Versionen ins Setupverzeichnis kopieren 

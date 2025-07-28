@@ -24,6 +24,7 @@ type
     dxLayoutLookAndFeelList1: TdxLayoutLookAndFeelList;
     dxLayoutSkinLookAndFeel1: TdxLayoutSkinLookAndFeel;
     procedure con_PCMBeforeConnect(Sender: TObject);
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -44,7 +45,7 @@ type
     dtGueltig,dtCurrDate: Tdate;
     iBenutzer: integer;
     sUSerAutologin: string;
-    function ReadServerAdress: boolean;
+    iScale: double;
   end;
 
 var
@@ -74,30 +75,6 @@ implementation
 
 uses PCM.Main;
 
-function Tdm_PCM.ReadServerAdress: boolean;
-var
-  iniFile: TIniFile;
-begin
-  iniFile:=TIniFile.create(GetEnvironmentVariable('LOCALAPPDATA') + '\PCM\PCM.ini');
-  sServer:= iniFile.ReadString('PCM','Server','localhost');
-  sStyle:= iniFile.ReadString('PCMManager','Style','Windows10');
-  sDesign:= iniFile.ReadString('PCMManager','Design','Basic');
-  iDBType:= iniFile.ReadInteger('Database','Type',0);
-  frm_PCM_Main.lafCtrl_Main.SkinName:= sDesign;
-  iniFile.Free;
-
-  try
-    con_PCM.Params.Values['Server'] := sserver;
-    con_PCM.Connected:= True;
-
-    result:= true;
-  except
-    MessageDlg('Es konnte keine Verbindung zur Datenbank hergestellt werden.'
-    + 'Bitte überprüfen Sie die Serveraddresse in der Konfigurationsdatei:' + sLineBreak + GetEnvironmentVariable('LOCALAPPDATA') + '\PCM\PCM.ini.' + sLineBreak
-    + 'Das Programm wird beendet.', mtError, [mbOk], 0);
-    result:= false;
-  end;
-end;
 procedure Tdm_PCM.con_PCMBeforeConnect(Sender: TObject);
 begin
   con_PCM.LoginPrompt := False;
@@ -131,7 +108,9 @@ begin
      end;
   end;
 end;
-
-
+procedure Tdm_PCM.DataModuleCreate(Sender: TObject);
+begin
+  iScale := Screen.PrimaryMonitor.PixelsPerInch /96;
+end;
 
 end.

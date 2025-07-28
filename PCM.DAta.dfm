@@ -1,4 +1,5 @@
 object dm_PCM: Tdm_PCM
+  OnCreate = DataModuleCreate
   Height = 720
   Width = 960
   PixelsPerInch = 144

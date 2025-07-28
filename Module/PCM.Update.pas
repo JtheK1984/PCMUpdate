@@ -111,16 +111,16 @@ begin
   Log('MYSQL-Version prüfen...',0);
   Panel1.Visible := True;
   Application.ProcessMessages;
-  dxLayoutLabeledItem3.CaptionOptions.text:= '[B]Prüfe Versionstabellen PCM[/B]';
-  dxLayoutLabeledItem4.CaptionOptions.text:= 'Prüfe Version PCM Database';
-  dxLayoutLabeledItem5.CaptionOptions.text:= 'Datenbankupdate durchführen';
+  dxLayoutLabeledItem3.CaptionOptions.text:= rs_PCMUpdate_Update1;
+  dxLayoutLabeledItem4.CaptionOptions.text:= rs_PCMUpdate_Update2;
+  dxLayoutLabeledItem5.CaptionOptions.text:= rs_PCMUpdate_Update3;
   Application.ProcessMessages;
   Sleep(500);
   CreateInsertTable(dm_PCM.qry_work);
   Application.ProcessMessages;
-  dxLayoutLabeledItem3.CaptionOptions.text:= 'Prüfe Versionstabellen PCM';
-  dxLayoutLabeledItem4.CaptionOptions.text:= '[B]Prüfe Version PCM Database[/B]';
-  dxLayoutLabeledItem5.CaptionOptions.text:= 'Datenbankupdate durchführen';
+  dxLayoutLabeledItem3.CaptionOptions.text:= rs_PCMUpdate_Update4;
+  dxLayoutLabeledItem4.CaptionOptions.text:= rs_PCMUpdate_Update5;
+  dxLayoutLabeledItem5.CaptionOptions.text:= rs_PCMUpdate_Update6;
   Application.ProcessMessages;
   Application.ProcessMessages;
   Log('Datenbankversionen abfragen...',0);
@@ -131,16 +131,16 @@ begin
   iMajor_PCManager:=dm_PCM.qry_work.FieldByName('Major').AsInteger;
   iMinor_PCManager:=dm_PCM.qry_work.FieldByName('Minor').AsInteger;
   dm_PCM.qry_work.Close;
-  dxLayoutLabeledItem3.CaptionOptions.text:= 'Prüfe Versionstabellen PCM';
-  dxLayoutLabeledItem4.CaptionOptions.text:= 'Prüfe Version PCM Database';
-  dxLayoutLabeledItem5.CaptionOptions.text:= '[B]Datenbankupdate durchführen[/B]';
+  dxLayoutLabeledItem3.CaptionOptions.text:= rs_PCMUpdate_Update7;
+  dxLayoutLabeledItem4.CaptionOptions.text:= rs_PCMUpdate_Update8;
+  dxLayoutLabeledItem5.CaptionOptions.text:= rs_PCMUpdate_Update9;
   Application.ProcessMessages;
   Log('Datenbankupdate ausführen...',0);
   Sleep(500);
   ProcessDatabase('PCM_MANAGER');
-  dxLayoutLabeledItem3.CaptionOptions.text:= 'Prüfe Versionstabellen PCM';
-  dxLayoutLabeledItem4.CaptionOptions.text:= 'Prüfe Version PCM Database';
-  dxLayoutLabeledItem5.CaptionOptions.text:= 'Datenbankupdate durchführen';
+  dxLayoutLabeledItem3.CaptionOptions.text:= rs_PCMUpdate_Update10;
+  dxLayoutLabeledItem4.CaptionOptions.text:= rs_PCMUpdate_Update11;
+  dxLayoutLabeledItem5.CaptionOptions.text:= rs_PCMUpdate_Update12;
   Application.ProcessMessages;
 end;
 procedure Tfrm_Update.ProcessDataBase(Alias: string);
@@ -201,7 +201,6 @@ var
   Ver: TZMIUpdateVersion;
 //  s: string;
 begin
-
   Log('-- Update von Alias ' + Alias + ' --',0);
   Log('XML-Datei wird eingelesen...',0);
   db := ReadDatabase(Alias);

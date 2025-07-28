@@ -7,7 +7,7 @@
         <Program_Soluling>E:\Solu\SoluMake.exe</Program_Soluling>
         <MainSource>PCMUpdate.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -1192,7 +1192,7 @@ $(PreBuildEvent)]]></PreBuildEvent>
     <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
     <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
-        <PreBuildEvent>PCM-Functions\PCMIncrementBuildNumber.exe Versioninfo32.rc &amp;&amp;Del Versioninfo32.res&amp;&amp;BRCC32.exe Versioninfo32.rc</PreBuildEvent>
+        <PreBuildEvent>PCM-Functions\PCMIncrementBuildNumber.exe Versioninfo32.rc &amp;&amp;Del Versioninfo32.res&amp;&amp;BRCC32.exe Versioninfo32.rc</PreBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
@@ -1200,7 +1200,7 @@ $(PreBuildEvent)]]></PreBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
-        <PreBuildEvent>PCM-Functions\PCMIncrementBuildNumber.exe Versioninfo32.rc &amp;&amp;Del Versioninfo32.res&amp;&amp;BRCC32.exe Versioninfo32.rc</PreBuildEvent>
+        <PreBuildEvent>PCM-Functions\PCMIncrementBuildNumber.exe Versioninfo32.rc &amp;&amp;Del Versioninfo32.res&amp;&amp;BRCC32.exe Versioninfo32.rc</PreBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
