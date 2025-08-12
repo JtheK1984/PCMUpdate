@@ -157,6 +157,7 @@ $(PreBuildEvent)]]></PreBuildEvent>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="PCMUpdate.dxSettings.pas"/>
+        <DCCReference Include="Module\PCM.Update.Strings.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -218,6 +219,12 @@ $(PreBuildEvent)]]></PreBuildEvent>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="Win32\Release\PCMUpdate.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win32\Release\PCMUpdate.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>PCMUpdate.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
                         <Operation>1</Operation>

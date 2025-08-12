@@ -66,7 +66,7 @@ const
   PCM_Logname =  'PCMUpdate';
   PCM_Connectionname = 'Update';
   PCM_Programmnummer = 5;
-
+  PCM_Lizenz = false;
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}

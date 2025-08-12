@@ -28,9 +28,9 @@ object SplashScreen: TSplashScreen
     TabOrder = 0
     object img_Splash: TImage
       Left = 0
-      Top = 0
+      Top = 41
       Width = 1000
-      Height = 467
+      Height = 426
       Align = alClient
       Picture.Data = {
         0D546478536D617274496D61676589504E470D0A1A0A0000000D494844520000
@@ -2313,6 +2313,7 @@ object SplashScreen: TSplashScreen
         70381C0E87C3E1703C0238E1EE70381C0E87C3E1703C0238E1EE70381C0E87C3
         E1703C0238E1EE70381C0E87C3E1703C0238E1EE70381C0E87C3E1703C02FCEF
         12C994D5D0AFFDAD0000000049454E44AE426082}
+      Stretch = True
       ExplicitLeft = 3
       ExplicitTop = -3
       ExplicitWidth = 994
@@ -2335,8 +2336,9 @@ object SplashScreen: TSplashScreen
       Transparent = True
     end
     object lbl_Progname: TcxLabel
-      Left = 462
-      Top = 10
+      Left = 0
+      Top = 0
+      Align = alTop
       BiDiMode = bdLeftToRight
       Caption = '32-Bit'
       ParentBiDiMode = False
@@ -2347,8 +2349,10 @@ object SplashScreen: TSplashScreen
       Style.Font.Name = 'Segoe UI'
       Style.Font.Style = [fsBold]
       Style.IsFontAssigned = True
+      Properties.Alignment.Horz = taCenter
       TabOrder = 1
       Transparent = True
+      AnchorX = 500
     end
     object lbl_ProgVersion: TcxLabel
       Left = 464
@@ -2396,6 +2400,7 @@ object SplashScreen: TSplashScreen
       StyleHot.LookAndFeel.NativeStyle = False
       TabOrder = 3
       Transparent = True
+      ExplicitTop = 465
       Width = 1000
     end
   end
@@ -2440,5 +2445,12 @@ object SplashScreen: TSplashScreen
     OnTimer = Timer6Timer
     Left = 152
     Top = 432
+  end
+  object Timer11: TTimer
+    Enabled = False
+    Interval = 250
+    OnTimer = Timer11Timer
+    Left = 88
+    Top = 144
   end
 end

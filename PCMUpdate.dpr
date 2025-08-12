@@ -4,7 +4,7 @@ uses
   inifiles,
   NtTranslator,
   System.SysUtils,
-  uWVLoader,			
+  uWVLoader,
   Vcl.Forms,
   Vcl.Themes,
   Vcl.Styles,
@@ -16,7 +16,8 @@ uses
   PCM.Update.Libxml2 in 'Helper\PCM.Update.Libxml2.pas',
   PCM.splash in 'PCM.splash.pas' {SplashScreen},
   PCM.Update in 'Module\PCM.Update.pas' {frm_Update},
-  PCMUpdate.dxSettings in 'PCMUpdate.dxSettings.pas';
+  PCMUpdate.dxSettings in 'PCMUpdate.dxSettings.pas',
+  PCM.Update.Strings in 'Module\PCM.Update.Strings.pas';
 
 {$R *.res}
 
@@ -49,7 +50,7 @@ begin
   {$ENDIF}
   TNtTranslator.SetNew(slocale,[],'de');
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(Tdm_PCM,dm_PCM);
-  Application.CreateForm(Tfrm_pcm_Main,frm_pcm_Main);
+  Application.CreateForm(Tdm_PCM, dm_PCM);
+  Application.CreateForm(Tfrm_pcm_Main, frm_pcm_Main);
   Application.Run;
 end.

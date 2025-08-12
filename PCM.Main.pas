@@ -155,7 +155,7 @@ uses  PCM.Benutzerverwaltung,
       PCM.Helper,
       PCM.Update,
       PCM.SQL,
-			PCM.Strings, PCM.splash;
+			PCM.Update.Strings, PCM.splash;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Hilfsfunktionen                                                            //
