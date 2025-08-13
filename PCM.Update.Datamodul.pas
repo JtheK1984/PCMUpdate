@@ -41,6 +41,9 @@ implementation
 
 {$R *.dfm}
 
+uses 
+	PCM.Helper;
+	
 procedure Tfrm_DB.ReadServerAdress;
 var
   iniFile: TIniFile;
@@ -66,9 +69,9 @@ begin
     con_Service.Connected:= True;
     con_WebRadio.Connected:= True;
   except
-    MessageDlg('Es konnte keine Verbindung zur Datenbank hergestellt werden.'
+		SetMessageDialog(2,'Es konnte keine Verbindung zur Datenbank hergestellt werden.'
     + 'Bitte überprüfen Sie die Serveraddresse in der Konfigurationsdatei:' + sLineBreak + GetEnvironmentVariable('LOCALAPPDATA') + '\PCM\PCM.ini.' + sLineBreak
-    + 'Das Programm wird beendet.', mtError, [mbOk], 0);
+    + 'Das Programm wird beendet.', ,[rs_general_BTN_ok,'',''],[mrOk,mrNone,mrNone]);
     Application.Terminate;
   end;
   try
