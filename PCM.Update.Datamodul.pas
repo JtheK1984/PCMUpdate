@@ -42,7 +42,7 @@ implementation
 {$R *.dfm}
 
 uses 
-	PCM.Helper;
+	PCM.Helper,PCM.Update.Strings;
 	
 procedure Tfrm_DB.ReadServerAdress;
 var
@@ -71,7 +71,7 @@ begin
   except
 		SetMessageDialog(2,'Es konnte keine Verbindung zur Datenbank hergestellt werden.'
     + 'Bitte überprüfen Sie die Serveraddresse in der Konfigurationsdatei:' + sLineBreak + GetEnvironmentVariable('LOCALAPPDATA') + '\PCM\PCM.ini.' + sLineBreak
-    + 'Das Programm wird beendet.', ,[rs_general_BTN_ok,'',''],[mrOk,mrNone,mrNone]);
+    + 'Das Programm wird beendet.',[rs_general_BTN_ok,'',''],[mrOk,mrNone,mrNone]);
     Application.Terminate;
   end;
   try
