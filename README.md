@@ -4,6 +4,9 @@
 # Kurzbeschreibung:
   PCM - Update
 
+# Beschreibung
+  Tool zum aktualisieren der Datenbank (wenn neue Spalten oder Tabellen dazu kommen, Pflege über PCMupdate.xml)
+
 # Entwicklungsumgebung:
   DELPHI 12.3 Athens
 
@@ -36,4 +39,4 @@
   - PrepareCopy.cmd (erzeugte Versionen werden in das Inno-Setupverzeichnis abgelgt)
 
 # Stand:
-  12.08.2025
+  12.07.2026
