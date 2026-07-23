@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.379,E:\Projekte\Windows\PCMUpdate\Unit1.pas=E:\Projekte\Windows\PCMUpdate\PCM.DAta.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.686,=E:\Projekte\Windows\PCMUpdate\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.724,=E:\Projekte\Windows\PCMUpdate\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.708,E:\Projekte\Windows\PCMUpdate\PCM.Update.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.379,E:\Projekte\Windows\PCMUpdate\Unit1.dfm=E:\Projekte\Windows\PCMUpdate\PCM.DAta.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.169,=E:\Projekte\Windows\PCMUpdate\PCM.splash.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.746,E:\Projekte\Windows\PCMUpdate\Unit1.pas=E:\Projekte\Windows\PCMUpdate\Module\PCM.Update.Strings.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.205,=E:\Projekte\Windows\PCMUpdate\PCMUpdate.dxSettings.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.405,=E:\Projekte\Windows\PCMUpdate\Module\PCM.Update.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.776,=E:\Projekte\Windows\PCMUpdate\PCM.Update.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.149,E:\Projekte\Windows\PCMUpdate\Modules\PCM.Update.Datamodul.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.597,E:\Projekte\Windows\PCMUpdate\Modules\PCM.Update.Datamodul.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.313,=E:\Projekte\Windows\PCMUpdate\Modules\PCM.Update.Datamodul.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.169,=E:\Projekte\Windows\PCMUpdate\PCM.splash.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.392,=E:\Projekte\Windows\PCMUpdate\Modules\PCM.Update.Datamodul.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.379,E:\Projekte\Windows\PCMUpdate\PCM.DAta.dfm=E:\Projekte\Windows\PCMUpdate\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.658,E:\Projekte\Windows\PCMUpdate\Modules\PCM.Update.Datamodul.pas=</Transaction>
-    <Transaction>2025.08.12 14:37:03.686,=E:\Projekte\Windows\PCMUpdate\Unit1.pas</Transaction>
-    <Transaction>2025.08.12 14:37:26.746,E:\Projekte\Windows\PCMUpdate\Module\PCM.Update.Strings.pas=E:\Projekte\Windows\PCMUpdate\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.776,=E:\Projekte\Windows\PCMUpdate\PCM.Update.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.708,E:\Projekte\Windows\PCMUpdate\PCM.Update.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.379,E:\Projekte\Windows\PCMUpdate\PCM.DAta.pas=E:\Projekte\Windows\PCMUpdate\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.149,E:\Projekte\Windows\PCMUpdate\Modules\PCM.Update.Datamodul.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.392,=E:\Projekte\Windows\PCMUpdate\Modules\PCM.Update.Datamodul.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.313,=E:\Projekte\Windows\PCMUpdate\Modules\PCM.Update.Datamodul.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.597,E:\Projekte\Windows\PCMUpdate\Modules\PCM.Update.Datamodul.pas=</Transaction>
   </Transactions>
 </BorlandProject>

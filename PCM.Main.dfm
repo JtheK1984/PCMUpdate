@@ -24,9 +24,9 @@ object frm_PCM_Main: Tfrm_PCM_Main
   TextHeight = 13
   object navbr_main: TdxNavBar
     Left = 0
-    Top = 35
+    Top = 30
     Width = 200
-    Height = 726
+    Height = 731
     Align = alLeft
     ActiveGroupIndex = 0
     TabOrder = 0
@@ -34,7 +34,6 @@ object frm_PCM_Main: Tfrm_PCM_Main
     View = 14
     OptionsImage.SmallImages = dm_PCM.imglst_16x16
     OptionsStyle.CustomStyles.Background = navbrStyleIt_main
-    ExplicitTop = 30
     ExplicitHeight = 714
     object navbrgrp_Optionen: TdxNavBarGroup
       Caption = 'Optionen'
@@ -157,21 +156,20 @@ object frm_PCM_Main: Tfrm_PCM_Main
   end
   object grpbx_Design: TcxGroupBox
     Left = 200
-    Top = 35
+    Top = 30
     Align = alClient
     PanelStyle.Active = True
     Style.BorderStyle = ebsNone
     TabOrder = 1
-    ExplicitTop = 30
     ExplicitWidth = 1058
     ExplicitHeight = 714
-    Height = 726
+    Height = 731
     Width = 1064
     object pc_main: TcxPageControl
       Left = 2
       Top = 2
       Width = 1060
-      Height = 722
+      Height = 727
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
@@ -187,7 +185,7 @@ object frm_PCM_Main: Tfrm_PCM_Main
       OnPageChanging = pc_mainPageChanging
       ExplicitWidth = 1054
       ExplicitHeight = 710
-      ClientRectBottom = 718
+      ClientRectBottom = 723
       ClientRectLeft = 4
       ClientRectRight = 1056
       ClientRectTop = 4
@@ -474,12 +472,6 @@ object frm_PCM_Main: Tfrm_PCM_Main
     Top = 232
   end
   object lafCtrl_Main: TcxLookAndFeelController
-    Kind = lfFlat
-    NativeStyle = True
-    ScrollbarMode = sbmClassic
-    ScrollMode = scmClassic
-    SkinName = 'DevExpressDarkStyle'
-    RenderMode = rmGDIPlus
     Left = 88
     Top = 104
   end
@@ -4253,7 +4245,6 @@ object frm_PCM_Main: Tfrm_PCM_Main
     MenusShowRecentItemsFirst = False
     NotDocking = [dsNone, dsLeft, dsTop, dsRight, dsBottom]
     PopupMenuLinks = <>
-    Style = bmsUseLookAndFeel
     UseSystemFont = True
     Left = 472
     Top = 192
@@ -4261,7 +4252,7 @@ object frm_PCM_Main: Tfrm_PCM_Main
     DockControlHeights = (
       0
       0
-      35
+      30
       0)
     object tb_Main: TdxBar
       AllowClose = False
